@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceemvybmiia8w"]
+
+[ext_resource type="Script" uid="uid://b1woxsrh1f1se" path="res://_Game/Scenes/Entities/Bullet.cs" id="1_r3n2n"]
+
+[sub_resource type="Gradient" id="Gradient_g4nwe"]
+offsets = PackedFloat32Array(0.5, 0.50666666)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r3n2n"]
+gradient = SubResource("Gradient_g4nwe")
+width = 768
+height = 768
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1.2, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3n2n"]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_r3n2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.12941177, 0.4392157, 1)
+scale = Vector2(0.03, 0.03)
+texture = SubResource("GradientTexture2D_r3n2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r3n2n")

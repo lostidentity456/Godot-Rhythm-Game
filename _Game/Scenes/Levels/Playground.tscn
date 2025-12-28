@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://3uk7typlu1s2"]
+
+[ext_resource type="PackedScene" uid="uid://ceemvybmiia8w" path="res://_Game/Scenes/Entities/Bullet.tscn" id="2_rccou"]
+[ext_resource type="PackedScene" uid="uid://hhs4hg5kluxu" path="res://_Game/Scenes/Entities/Player.tscn" id="2_vl17u"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_vl17u")]
+position = Vector2(960, 540)
+
+[node name="Bullet" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1654, 142)
+
+[node name="Bullet2" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1666, 224)
+
+[node name="Bullet3" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1688, 343)
+
+[node name="Bullet4" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1700, 456)
+
+[node name="Bullet5" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1709, 599)
+
+[node name="Bullet6" parent="." instance=ExtResource("2_rccou")]
+position = Vector2(1713, 719)

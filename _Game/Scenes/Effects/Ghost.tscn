@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv8omxu8oqy45"]
+
+[ext_resource type="Texture2D" uid="uid://3ajemx6oveh3" path="res://Assets/Art/square.png" id="1_ct0td"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_wxchh"]
+script/source = "using Godot;
+using System;
+
+public partial class Ghost : Sprite2D
+{
+    public override void _Ready()
+    {
+        // 1. Create a Tween
+        Tween tween = CreateTween();
+
+        // 2. Fade Alpha to 0 (Invisible) over 0.5 seconds
+        tween.TweenProperty(this, \"modulate:a\", 0.0f, 0.5f);
+
+        // 3. Delete this object when the Tween finishes
+        tween.TweenCallback(Callable.From(QueueFree));
+    }
+}"
+
+[node name="Ghost" type="Sprite2D"]
+scale = Vector2(0.033, 0.033)
+texture = ExtResource("1_ct0td")
+script = SubResource("CSharpScript_wxchh")

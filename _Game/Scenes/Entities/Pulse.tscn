@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxucqex3qev6g"]
+
+[ext_resource type="Script" uid="uid://biesetaeydf5y" path="res://_Game/Scenes/Entities/Pulse.cs" id="1_7drmd"]
+
+[sub_resource type="Gradient" id="Gradient_caoj7"]
+offsets = PackedFloat32Array(0.9, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7drmd"]
+gradient = SubResource("Gradient_caoj7")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhlkq"]
+radius = 60.0
+
+[node name="Pulse" type="Area2D"]
+script = ExtResource("1_7drmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.12941177, 0.4392157, 1)
+texture = SubResource("GradientTexture2D_7drmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hhlkq")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjn2dq7qca713"
+path="res://.godot/imported/Lockyn - Vapor (Original Mix) [Future Chill].mp3-48fda77dbb23fe479c27d493daeb3328.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Lockyn - Vapor (Original Mix) [Future Chill].mp3"
+dest_files=["res://.godot/imported/Lockyn - Vapor (Original Mix) [Future Chill].mp3-48fda77dbb23fe479c27d493daeb3328.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

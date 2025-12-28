@@ -1,0 +1,213 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfidlt6hda0tw"]
+
+[ext_resource type="Script" uid="uid://kcn80cxvwtnv" path="res://_Game/Scenes/Levels/Level_1_Vapor.cs" id="1_tohty"]
+[ext_resource type="PackedScene" uid="uid://hhs4hg5kluxu" path="res://_Game/Scenes/Entities/Player.tscn" id="2_8rq1s"]
+[ext_resource type="AudioStream" uid="uid://cjn2dq7qca713" path="res://Assets/Audio/Lockyn - Vapor (Original Mix) [Future Chill].mp3" id="2_tonjn"]
+[ext_resource type="PackedScene" uid="uid://ceemvybmiia8w" path="res://_Game/Scenes/Entities/Bullet.tscn" id="3_ikd22"]
+[ext_resource type="PackedScene" uid="uid://cmri6hjkunjmh" path="res://_Game/Scenes/Entities/Vertical_Laser.tscn" id="4_ikd22"]
+[ext_resource type="PackedScene" uid="uid://cxucqex3qev6g" path="res://_Game/Scenes/Entities/Pulse.tscn" id="5_8c21t"]
+[ext_resource type="PackedScene" uid="uid://xoq07h1jfgkb" path="res://_Game/Scenes/Entities/Warning_Circle.tscn" id="6_smr71"]
+[ext_resource type="PackedScene" uid="uid://dlgpbiq3yf7r7" path="res://_Game/Scenes/Entities/Snake.tscn" id="6_wowkb"]
+[ext_resource type="PackedScene" uid="uid://db82mos3i8t0u" path="res://_Game/Scenes/Entities/Horizontal_Laser.tscn" id="7_7xw22"]
+[ext_resource type="PackedScene" uid="uid://dds0l8pgkxg62" path="res://_Game/Scenes/Entities/Side_Square.tscn" id="7_jbkmf"]
+[ext_resource type="FontFile" uid="uid://kb64q2j57v44" path="res://Assets/Fonts/VarelaRound-Regular.ttf" id="8_jbkmf"]
+[ext_resource type="PackedScene" uid="uid://cxrjgmoj3vey2" path="res://_Game/Scenes/Entities/Thin_Laser.tscn" id="8_pgy6d"]
+[ext_resource type="PackedScene" uid="uid://k6v4tosc0udb" path="res://_Game/Scenes/Entities/Visualizer_Bar.tscn" id="11_c6npf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wowkb"]
+font = ExtResource("8_jbkmf")
+font_size = 64
+outline_size = 5
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6npf"]
+font = ExtResource("8_jbkmf")
+font_size = 48
+
+[node name="Level_1_Vapor" type="Node2D" node_paths=PackedStringArray("VisualizerContainer", "MainCamera", "SongNameLabel", "AuthorLabel", "ScreenFader")]
+script = ExtResource("1_tohty")
+Song = ExtResource("2_tonjn")
+BulletScene = ExtResource("3_ikd22")
+PulseScene = ExtResource("5_8c21t")
+VerticalLaserScene = ExtResource("4_ikd22")
+SnakeScene = ExtResource("6_wowkb")
+HorizontalLaserScene = ExtResource("7_7xw22")
+ThinLaserScene = ExtResource("8_pgy6d")
+WarningCircleScene = ExtResource("6_smr71")
+SideSquareScene = ExtResource("7_jbkmf")
+VisualizerContainer = NodePath("Visualizer")
+MainCamera = NodePath("MainCamera")
+SongNameLabel = NodePath("UI/VBoxContainer/SongNameLabel")
+AuthorLabel = NodePath("UI/VBoxContainer/AuthorLabel")
+ScreenFader = NodePath("UI/Fader")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Fader" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -105.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SongNameLabel" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "VAPOR"
+label_settings = SubResource("LabelSettings_wowkb")
+horizontal_alignment = 1
+
+[node name="AuthorLabel" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "by Lockyn"
+label_settings = SubResource("LabelSettings_c6npf")
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_8rq1s")]
+position = Vector2(960, 540)
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+
+[node name="Visualizer" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 460.0
+offset_right = 1455.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="VisualizerBar" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar2" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar3" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar4" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar5" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar6" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar7" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar8" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar9" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar10" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar11" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar12" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar13" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar14" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar15" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar16" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar17" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar18" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar19" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar20" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar21" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar22" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar23" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar24" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar25" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar26" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar27" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar28" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar29" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar30" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar31" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar32" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar33" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar34" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar35" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar36" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar37" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar38" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar39" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2
+
+[node name="VisualizerBar40" parent="Visualizer" instance=ExtResource("11_c6npf")]
+layout_mode = 2

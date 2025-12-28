@@ -1,0 +1,8 @@
+.godot/
+.mono/
+.vscode/
+bin/
+obj/
+Export/
+*.sln
+*.csproj

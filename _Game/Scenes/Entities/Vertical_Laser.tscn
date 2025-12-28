@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmri6hjkunjmh"]
+
+[ext_resource type="Script" uid="uid://hy3y4yy0va8e" path="res://_Game/Scenes/Entities/VerticalLaser.cs" id="1_exrgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggxu2"]
+size = Vector2(80, 80)
+
+[node name="Vertical_Laser" type="Area2D"]
+script = ExtResource("1_exrgo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, 40)
+shape = SubResource("RectangleShape2D_ggxu2")
+disabled = true

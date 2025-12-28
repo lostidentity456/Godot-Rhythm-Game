@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxrjgmoj3vey2"]
+
+[ext_resource type="Script" uid="uid://c3qyi5qcgu0e2" path="res://_Game/Scenes/Entities/ThinLaser.cs" id="1_jcark"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldq82"]
+size = Vector2(2000, 30)
+
+[node name="Thin_Laser" type="Area2D"]
+script = ExtResource("1_jcark")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(2000, 30)
+offset_top = -15.0
+offset_right = 2000.0
+offset_bottom = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1000, 0)
+shape = SubResource("RectangleShape2D_ldq82")

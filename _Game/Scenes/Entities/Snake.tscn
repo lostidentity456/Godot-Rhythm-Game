@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlgpbiq3yf7r7"]
+
+[ext_resource type="Script" uid="uid://c722dhfx11tbk" path="res://_Game/Scenes/Entities/Snake.cs" id="1_lj1x8"]
+
+[sub_resource type="Gradient" id="Gradient_hedq4"]
+offsets = PackedFloat32Array(0.95, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lj1x8"]
+gradient = SubResource("Gradient_hedq4")
+width = 240
+height = 240
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Curve" id="Curve_lj1x8"]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.2), 0.0, 0.0, 0, 0, Vector2(0.99998, 0.2), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+metadata/_snap_enabled = true
+
+[node name="Snake" type="Area2D"]
+script = ExtResource("1_lj1x8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.12941177, 0.4392157, 1)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_lj1x8")
+
+[node name="Line2D" type="Line2D" parent="."]
+modulate = Color(1, 0.12941177, 0.4392157, 1)
+width = 150.0
+width_curve = SubResource("Curve_lj1x8")

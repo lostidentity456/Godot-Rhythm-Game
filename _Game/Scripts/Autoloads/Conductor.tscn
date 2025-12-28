@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ng5tp8wafrv"]
+
+[ext_resource type="AudioStream" uid="uid://cjn2dq7qca713" path="res://Assets/Audio/Lockyn - Vapor (Original Mix) [Future Chill].mp3" id="1_cobfv"]
+[ext_resource type="Script" uid="uid://bsfrfti24w7qe" path="res://_Game/Scripts/Autoloads/Conductor.cs" id="1_rctho"]
+
+[node name="Conductor" type="AudioStreamPlayer"]
+stream = ExtResource("1_cobfv")
+autoplay = true
+script = ExtResource("1_rctho")
+Bpm = 155.0

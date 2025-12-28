@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6v4tosc0udb"]
+
+[ext_resource type="Script" uid="uid://beisxv563lbua" path="res://_Game/Scripts/Gameplay/VisualizerBar.cs" id="1_1wqjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a2jw"]
+size = Vector2(30, 200)
+
+[node name="VisualizerBar" type="ColorRect"]
+custom_minimum_size = Vector2(30, 75)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -1895.0
+offset_bottom = -880.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+color = Color(1, 0.12941177, 0.4392157, 1)
+script = ExtResource("1_1wqjf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 100)
+shape = SubResource("RectangleShape2D_6a2jw")
